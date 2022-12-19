@@ -1,0 +1,499 @@
+:root {
+  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #666;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 1rem;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #aaa;
+}
+
+.yoshi {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+  transition: left 200ms;
+  z-index: 1;
+}
+.yoshi.hit {
+  left: 10%;
+}
+.yoshi > img {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  pointer-events: none;
+  width: 40vw;
+}
+
+.hand {
+  position: absolute;
+  transform: translate(0%, -50%);
+  right: 0;
+  transition: transform 200ms, right 200ms;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  z-index: 2;
+}
+.hand.hit {
+  transform: translate(0%, -50%) scaleX(200%);
+  right: 50%;
+}
+.hand > img {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  pointer-events: none;
+}
+.hand > .pet-hand {
+  position: absolute;
+  width: 64px;
+  right: 200px;
+}
+
+main {
+  width: 100vw;
+  height: 100vh;
+}
+
+body {
+  margin: 0;
+  overflow: hidden;
+}
+
+.info-label {
+  font-size: 2rem;
+}
+
+.main-info {
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  z-index: 6;
+}
+
+.notif {
+  position: absolute;
+  z-index: 10;
+  text-align: center;
+  pointer-events: none;
+  transform: translate(-50%, 0px);
+}
+
+.bar-full {
+  width: 256px;
+  height: 48px;
+  position: relative;
+  background-color: grey;
+  text-align: center;
+  z-index: 11;
+  border-radius: 1rem;
+}
+.bar-full > span {
+  z-index: 12;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 256px;
+}
+
+.bar-bar {
+  height: 48px;
+  background-color: green;
+  position: absolute;
+  z-index: 11;
+  border-radius: 1rem;
+}
+
+.shop {
+  padding: 1rem;
+  right: -100%;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(57, 57, 57);
+  z-index: 15;
+  transition: right 200ms;
+}
+.shop.shop-active {
+  right: 0%;
+}
+
+.petmenu {
+  padding: 1rem;
+  right: -100%;
+  position: absolute;
+  max-width: 40vw;
+  background-color: rgb(57, 57, 57);
+  overflow-y: auto;
+  height: 100vh;
+  z-index: 15;
+  transition: right 200ms;
+}
+.petmenu.petmenu-active {
+  right: 0%;
+}
+
+.logo {
+  width: 312px;
+}
+
+.intro {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  position: absolute;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  background-color: black;
+  z-index: 50;
+  flex-direction: column;
+}
+.intro > img {
+  width: 50vw;
+}
+.intro > button {
+  width: 30vw;
+  height: 128px;
+  font-size: 3.5rem;
+  border-radius: 5rem;
+}
+
+.shop-item {
+  width: 68px;
+}
+
+.shop-items {
+  display: grid;
+  gap: 8px 8px;
+  grid-template-columns: 1fr 1fr 1fr;
+  overflow: auto;
+  width: 282px;
+  justify-items: center;
+}
+
+.shop-panel {
+  width: 100px;
+  height: 100px;
+  display: inline-block;
+  margin: 8px;
+}
+.shop-panel > button {
+  border-radius: 0.5rem;
+}
+.shop-panel.hit > button {
+  background-color: rgb(157, 0, 0);
+  color: white;
+}
+.shop-panel.block > button {
+  background-color: rgb(3, 41, 145);
+  color: white;
+}
+.shop-panel.normal > button {
+  background-color: green;
+  color: white;
+}
+
+.gambling {
+  width: 90vw;
+  height: 128px;
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  z-index: 20;
+  gap: 16px;
+  transition: left 2s;
+  left: 0;
+}
+.gambling > .gamble-panel {
+  width: 128px;
+}
+.gambling > .gamble-panel > img {
+  width: 128px;
+}
+.gambling > .gamble-panel.chosen {
+  border: 1rem solid red;
+}
+
+button {
+  color: black;
+}
+button[disabled] {
+  color: white;
+}
+
+.dev {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 20;
+  background-color: black;
+  padding: 1rem;
+  font-family: consolas, monospace;
+  font-size: 0.9rem;
+  color: white;
+  overflow: auto;
+  display: flex;
+  flex-direction: column-reverse;
+}
+.dev > input {
+  border: none;
+  outline: none !important;
+  background-color: black;
+  color: white;
+  font-family: consolas, monospace;
+  font-size: 0.9rem;
+}
+
+.bottom-info {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translate(-50%, 0px);
+  font-size: 1.5rem;
+  z-index: 15;
+}
+
+.pet-hand {
+  position: absolute;
+  width: 16vh;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+.inventorymenu {
+  padding: 1rem;
+  bottom: -100%;
+  position: absolute;
+  display: block;
+  overflow-y: auto;
+  height: 35vh;
+  width: 100vw;
+  background-color: rgb(57, 57, 57);
+  z-index: 16;
+  transition: bottom 200ms;
+}
+.inventorymenu.inventorymenu-active {
+  bottom: 0;
+}
+
+.inventory-container {
+  max-width: 70vw;
+}
+
+.inventory-title {
+  font-size: 2rem;
+}
+
+.inventory-panel {
+  position: relative;
+  display: inline-block;
+  width: 128px;
+  height: 128px;
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 8px;
+  border-radius: 1rem;
+  transition: transform 100ms;
+}
+.inventory-panel > img {
+  width: 128px;
+  height: 128px;
+  border-radius: 1rem;
+  -ms-interpolation-mode: nearest-neighbor;
+      image-rendering: -moz-crisp-edges;
+      image-rendering: pixelated;
+}
+.inventory-panel:hover {
+  transform: scale(1.1);
+}
+.inventory-panel > .inventory-panel-title {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  z-index: 20;
+}
+.inventory-panel > .inventory-panel-amount {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  z-index: 20;
+  font-size: 2rem;
+  opacity: 1;
+}
+.inventory-panel.notenough {
+  background-color: rgba(54, 1, 1, 0.3);
+}
+.inventory-panel > button {
+  border-radius: 1rem;
+}
+.inventory-panel > .inventory-equip {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.craftingmenu {
+  position: absolute;
+  width: 100vw;
+  bottom: -100%;
+  height: 256px;
+  left: 0;
+  z-index: 15;
+  padding: 8px;
+  box-sizing: border-box;
+  background-color: rgb(56, 56, 56);
+  transition: bottom 200ms;
+}
+.craftingmenu.craftingmenu-active {
+  bottom: calc(30vh + 32px);
+}
+
+.boxbuy {
+  width: 80px;
+}
+.boxbuy > img {
+  width: 64px;
+}
+
+.curved-button {
+  padding: 8px 16px 8px 16px;
+  border-radius: 1rem;
+}
+
+.modal-blur {
+  width: 100vw;
+  min-height: 100vh;
+  position: absolute;
+  top: -100%;
+  left: 0;
+  z-index: 100;
+  background-color: rgba(0, 0, 0, 0.8);
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  transition: top 200ms;
+}
+.modal-blur.modal-open {
+  top: 0;
+  opacity: 1;
+}
+
+.modal-content {
+  min-width: 50vw;
+  min-height: 60vh;
+  max-width: 80vw;
+  max-height: 80vh;
+  background-color: rgba(210, 210, 210, 0.2);
+  padding: 2rem;
+  border-radius: 1rem;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.pet-icon {
+  width: 128px;
+  height: 128px;
+  display: inline-block;
+  border-radius: 1rem;
+  position: relative;
+  background-color: rgba(99, 99, 99, 0.2);
+  border: none;
+  color: white;
+  transition: transform 200ms;
+  margin-bottom: 8px;
+  margin-right: 8px;
+}
+.pet-icon[disabled] {
+  background-color: rgba(22, 22, 22, 0.3);
+}
+.pet-icon:hover {
+  transform: scale(1.1);
+  background-color: rgba(99, 99, 99, 0.3);
+}
+.pet-icon > img {
+  height: 100px;
+  width: auto;
+}
+.pet-icon > .pet-level {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+}
+.pet-icon > .pet-name {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  text-align: left;
+}
+
+#equipment {
+  font-size: 1.5rem;
+}
+
+th, td {
+  border: 1px solid white;
+  padding: 8px;
+  width: 80px;
+}
+
+.bottom-icons {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  z-index: 110;
+}
+.bottom-icons > * > button {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.bottom-icons > * > button > svg {
+  width: 40px;
+  height: 40px;
+}
+
+.info {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  z-index: 101;
+}
+.info > span {
+  font-size: 1rem;
+}/*# sourceMappingURL=app.css.map */

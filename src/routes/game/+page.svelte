@@ -65,9 +65,8 @@
     onMount(() => {
       int.save.loadSave(data.user.save)
     })
-    //console.log(ownedPets)
+
     
-    //console.log(ownedPets)
     $: boughtPets = $ownedPets.map((p, i) => ({xp: p[1], pet: pets[p[0]], i: i}))
     
     function getDamage() {
@@ -270,7 +269,6 @@
       
       
       function handleKeypress(e: KeyboardEvent) {
-        // console.log(e)
       }
       onMount(() => {
         const inst = instance
@@ -287,10 +285,10 @@
           }
           
           {
-            //console.log($ownedPets, $curPet)
+            
             if (constants.pets[$ownedPets[$curPet]?.[0]]?.perks(getLevelsNoLocal($ownedPets[$curPet]).level) !== undefined) {
               let base = 0;
-              // console.log(constants.pets[$ownedPets[$curPet][0]].perks(getLevelsNoLocal($ownedPets[$curPet]).level))
+          
               base += constants.pets[$ownedPets[$curPet][0]].perks(getLevelsNoLocal($ownedPets[$curPet]).level)?.autoAdd ?? 0
               base *= 1 + (constants.pets[$ownedPets[$curPet][0]].perks(getLevelsNoLocal($ownedPets[$curPet]).level)?.autoMul ?? 0)
               $hp -= base;

@@ -21,6 +21,8 @@ model User {
 
   save   String @default("")
   posts Post[]
+  comments      Comment[]
+
 }
 
 model Roles {
@@ -37,10 +39,20 @@ model Post {
   authorId  String
   thread    Thread  @relation(fields: [threadId], references: [id])
   threadId  String
+  comments  Comment[]
 }
 
 model Thread {
   id        String  @id @default("")
   name      String  @default("Thread Name")
   posts     Post[]  
+}
+
+model Comment {
+  id        Int     @id @default(autoincrement())
+  post      Post    @relation(fields: [postId], references: [id])
+  postId    Int
+  author    User    @relation(fields: [authorId], references: [id])
+  authorId  String
+  content   String
 }

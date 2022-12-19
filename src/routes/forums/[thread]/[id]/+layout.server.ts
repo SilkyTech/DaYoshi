@@ -12,7 +12,11 @@ export const load: LayoutServerLoad = async ({locals}) => {
         select: { posts: true, id: true, name: true },
     })
 
+    let comments = (await db.comment.findMany({
+        where: {},
+        select: { author: true, content: true, postId: true }
+    }))
     
 
-    return {locals: locals, threads: threads}
+    return { locals: locals, threads: threads, comments }
 }

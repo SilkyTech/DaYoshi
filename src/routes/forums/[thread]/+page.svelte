@@ -55,6 +55,21 @@
         }
     }
 
+    const names: {[id: string]: string} = {}
+
+    onMount(() => {
+        curThread.posts.forEach(a => {
+            names[a.id] = "..."
+        })
+
+        curThread.posts.forEach(async a => {
+            let res = await fetch(`/api/v1/getUsername?uuid=${a.authorId}`, {
+                method: "POST",
+            })
+            let data = await res.text()
+            names[a.id] = data;
+        })
+    })
 </script>
 <Navbar data={data.locals}></Navbar>
 
@@ -80,6 +95,7 @@
         <div class="post">
             <a href={`${_location}/${post.id}`}>
                 <span class="post-title">{post.title}</span>
+                <span class="post-author">{names[post.id] ?? "..."}</span>
             </a>
         </div>
     {/each}
@@ -117,11 +133,18 @@
         font-size: 1.5rem;
         padding: 8px;
         box-sizing: border-box;
+        position: relative;
 
         & > a {
             color: white;
             text-decoration: none;
         }
+    }
+
+    .post-author {
+        position: absolute;
+        right: 8px;
+        font-size: 16px;
     }
 
     .main-container {

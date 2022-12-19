@@ -19,7 +19,7 @@
 <div class="main-container">
     {#each data.threads as thread}
         <div class="thread">
-            <a class="thread-title" href={`${_location}/${thread.id}`}>{thread.name} - {thread.posts.length}</a>
+            <a class="thread-title" href={`${_location}/${thread.id}`}>{thread.name} - {thread.posts.length} Posts</a>
         </div>
     {/each}
 </div>

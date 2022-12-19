@@ -439,7 +439,7 @@ export const pets: {
     {
         name: "Eian Yoshi",
         perks: (level) => ({hitAdd: level*0.05, hitMul: 0.05*level}),
-        description: "Pure luck and pure cringe condensed into a yoshi.",
+        description: "Pure luck and pure cringe condensed into a yoshi. Eian WHY",
         source: "pet/epicbox/eianbabyyoshi.png",
         salvage: 350,
         rarity: "mythical"
@@ -467,18 +467,18 @@ export const pets: {
         rarity: "mythical",
         source: "pet/goombastackpromaxultra.png"
     }, {
-        name: "(OLD) Goombascraper",
-        perks: (level) => ({hitAdd: 0, hitMul: 0}),
-        description: "Goomba Stack Pro Max goes too far its a skyscraper (OLD)",
+        name: "Aged Goombascraper",
+        perks: (level) => ({hitAdd: 0.0075*level, hitMul: 0.0075*level + Math.random()}),
+        description: "Goomba Stack Pro Max goes too far its a skyscraper, but the Goombas are old",
         salvage: 1200,
-        rarity: "chromatic",
+        rarity: "mythical",
         source: "pet/Goombascraper.png"
     }, {
-        name: "(OLD) Goombascraper Ultra",
-        perks: (level) => ({hitAdd: 0, hitMul: 0}),
-        description: "Goombascraper, but more (OLD)",
+        name: "Aged Goombascraper Ultra",
+        perks: (level) => ({hitAdd: 0.01*level, hitMul: 0.01*level + Math.random()}),
+        description: "Goombascraper, but more big, and older",
         salvage: 2400,
-        rarity: "chromatic",
+        rarity: "transcendental",
         source: "pet/Goombascraperultra.png"
     }, 
  //epic box pets
@@ -508,14 +508,14 @@ export const pets: {
         perks: (level) => ({hitAdd: level*0.09, hitMul: level*0.09 + Math.random()}),
         description: "Goomba Stack Pro Max goes too far its a skyscraper",
         salvage: 1200,
-        rarity: "chromatic",
+        rarity: "transcendental",
         source: "pet/Goombascraper.png"
     }, {
          name: "Goombascraper Ultra",
         perks: (level) => ({hitAdd: level*0.12, hitMul: level*0.12 + Math.random()}),
         description: "Goombascraper, but more tall",
         salvage: 2400,
-        rarity: "chromatic",
+        rarity: "transcendental",
         source: "pet/Goombascraperultra.png"
     },
 ]

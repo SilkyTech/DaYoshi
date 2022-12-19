@@ -31,6 +31,7 @@
     }
 
     function craft() {
+        if (!canCraft([], 1)) return;
         let newInv = Inventory.from($inventory)
         recipes[index][0].forEach(a => {
             newInv.removeItem(a[0], a[1])

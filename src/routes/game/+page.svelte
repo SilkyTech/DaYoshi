@@ -16,9 +16,17 @@
     import type Modal from '$lib/component/Modal.svelte';
     import Settings from '$lib/menus/Settings.svelte';
     import Tooltip from '$lib/component/Tooltip.svelte';
-	import { onMount } from 'svelte';
+	  import { onMount } from 'svelte';
+    import type { LayoutData } from './$types';
   
+    export let data: LayoutData;
 
+    onMount(() => {
+      if (!data.user) {
+        alert("Please log in!")
+        location.href = "/"
+      }
+    });
 
       
       const { 

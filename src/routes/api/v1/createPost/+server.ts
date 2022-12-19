@@ -37,9 +37,6 @@ export const POST = (async ({ url, request }) => {
                 }
             }
         })
-        console.log({title: title,
-            authorId: authorUsername!.id,
-            content: content})
         return new Response("created post")
     } else throw error(400, "")
     

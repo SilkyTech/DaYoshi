@@ -2,11 +2,13 @@ import { error } from '@sveltejs/kit';
 import type { RequestHandler } from './$types';
 import { db } from '$lib/database'
  
-export const POST = (async ({ url, }) => {
+export const POST = (async ({ url, request }) => {
     let token = url.searchParams.get('token');
-    let title = url.searchParams.get('title');
-    let content = url.searchParams.get('content');
-    let thread = url.searchParams.get('thread');
+
+    let json = await (request.json())
+    let title = json.title;
+    let content = json.content;
+    let thread = json.thread;
     if (token === null || title === null || content === null || thread === null) {
         throw error(400, "")
     }

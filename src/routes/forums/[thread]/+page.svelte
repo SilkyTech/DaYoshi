@@ -45,8 +45,13 @@
         if (data.user) {
             if (!creatingPost) {
                 let postData = await getPostData();
-                let res = await fetch(`/api/v1/createPost?token=${data.locals.user.token}&title=${encodeURI(postData.title)}&content=${encodeURI(postData.content)}&thread=${encodeURI(curThread.id)}`, {
+                let res = await fetch(`/api/v1/createPost?token=${data.locals.user.token}`, {
                     method: "POST",
+                    body: JSON.stringify({
+                        title: postData.title,
+                        content: postData.content,
+                        thread: curThread.id
+                    })
                 })
                 console.log(res, await res.text(), res.url)
             }
@@ -91,7 +96,7 @@
     {#if curThread.posts.length === 0}
         Either this thread doesn't exist or there are no posts
     {/if}
-    {#each curThread.posts as post}
+    {#each curThread.posts.reverse() as post}
         <div class="post">
             <a href={`${_location}/${post.id}`}>
                 <span class="post-title">{post.title}</span>

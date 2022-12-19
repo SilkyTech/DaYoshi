@@ -2,8 +2,10 @@
     import { page } from '$app/stores';
 	import MarkdownEditor from '$lib/MarkdownEditor.svelte';
 	import Navbar from "$lib/Navbar.svelte";
+	import { Viewer } from 'bytemd';
 	import { onMount } from "svelte";
     import type { LayoutData } from './$types'
+    import gfm from '@bytemd/plugin-gfm'
 
     export let data: LayoutData;
 
@@ -12,15 +14,15 @@
         _location = location.href;
     })
 
-    $: post = data.threads[parseInt($page.params.id)]
+    $: post = (data.threads?.[data.threads.map(a => a.id).indexOf($page.params.thread)] ?? []).posts[parseInt($page.params.id)-1]
     
 </script>
 <Navbar data={data.locals}></Navbar>
 
 
 <div class="main-container">
-    <h1>{post?.name}</h1>
-    
+    <h1>{post.title}</h1>
+    <Viewer plugins={[gfm()]} value={post?.content ?? ""}></Viewer>
 </div>
 
 <style lang="scss">

@@ -18,7 +18,6 @@
             $deaths -= skins[ind][3];
             $boughtSkins.add(ind)
             $boughtSkins = $boughtSkins
-            int.save.saveSave()
         }
     }
 

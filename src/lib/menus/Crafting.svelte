@@ -4,9 +4,9 @@
     import { game } from "../stores"
 
     let {
-        pInventory,
         inventory
     } = game
+    $: pInventory = Inventory.from($inventory)
 
     let active = false;
     let index = 0;
@@ -21,7 +21,6 @@
     function canCraft(_: Item[], __: any) {
         for (let i = 0; i < recipes[index][0].length; i++) {
             const a = recipes[index][0][i];
-            console.log(pInventory.getItem(a[0]).amount, )
             if (pInventory.getItem(a[0]).amount < a[1]) {
                 return false;
             }

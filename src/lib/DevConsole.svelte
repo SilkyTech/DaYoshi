@@ -5,6 +5,8 @@
     import { getLevelsNoLocal, median } from './utils';
 	import { onMount } from 'svelte';
 
+    export let isAdmin: boolean;
+
     const {
         deaths,
         hits,
@@ -16,9 +18,6 @@
 
     let showToggle = false;
     let devOn = false;
-    onMount(() => {
-        devOn = localStorage.getItem('topsecretdevonlyoptiononlydevswillknow') === "supersecretcodethatonlydevsknow"
-    })
 
     let data: string = "Use /toggle to toggle visibility<br>";
     let input: string;
@@ -197,10 +196,11 @@
                 // else if (["/save"].includes(args[0])) {
 
                 //     log(`Saved save`)
-                // } else if (["/load"].includes(args[0])) {
-                //     SaveSystem.loadSave()
-                //     log(`Loaded save`)
-                // } 
+                
+                else if (["/load"].includes(args[0])) {
+                    SaveSystem.loadSave(args[1])
+                    log(`Loaded save`)
+                } 
                 else if (["/toggle", "/t"].includes(args[0])) {
                     showToggle = !showToggle
                 } else if (["/boxchances", "/bc"].includes(args[0])) {
@@ -291,7 +291,7 @@
     
 </script>
 
-{#if devOn}
+{#if isAdmin}
 <div class="dev" draggable="true" style={showToggle ? "height: 100vh;" : ""}>
     <input type="text" bind:value={input} on:keydown={keyPress}>
     {#if showToggle}

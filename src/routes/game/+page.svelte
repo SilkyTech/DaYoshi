@@ -320,7 +320,7 @@
         }
       } on:mousemove={mousemove} on:keypress={handleKeypress}>
       <!-- <Intro></Intro> -->
-      <DevConsole></DevConsole>
+      <DevConsole isAdmin={data.user.role === "ADMIN"}></DevConsole>
       <div class="main-info">
         <img src="logo.png" alt="Da Yoshi" class="logo"><br>
         <span class="info-label">HP: <div class="bar-full"><div class="bar-bar" style={`width: ${$hp / yoshiObj.hp * 100}%;`}></div><span>{$hp.toFixed(2)} / {yoshiObj.hp}</span></div></span><br>

@@ -569,9 +569,9 @@ export const yoshis: {
         name: "Placeholder Yoshi",
         hp: Infinity,
         regen: Infinity,
-        reward: Infinity,
-        kill: Infinity,
-        drops: [["Yoshi Apple", 69420]]
+        reward: 0,
+        kill: 0,
+        drops: [["Yoshi Sludge", 69420]]
     }
 ]
 

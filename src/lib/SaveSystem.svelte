@@ -9,6 +9,8 @@
         usedDev, usedAutoclicker, boughtSkins, 
         curPet, ownedPets, curSkin, inventory, equipment } = game
 
+    let _save: string = ""
+
     export function xor(str: string, shift: string) {
         let newS = ""
         str.split("").forEach((letter, i) => {
@@ -28,6 +30,7 @@
     export function loadSave(save: string = ""): boolean {
         if (save !== null) {
             try {
+                _save = save
                 let saveParsed = atob(save)
                 saveParsed = xor(saveParsed, "yoshiisangry")
                 let parts: string[] = saveParsed.split("|")
@@ -102,5 +105,9 @@
         fetch(`/api/v1/changesave?token=${token}&value=${btoa(xor(save.join("|"), "yoshiisangry")).replace("+", "-").replace("/", "_")}`, {
             method: "POST"
         })
+    }
+
+    export function getLatestSave() {
+        return _save
     }
 </script>

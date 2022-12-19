@@ -76,7 +76,7 @@
                     if (args[1] === "save") {
                         if (args[2] === "pretty") log(`Save: "${SaveSystem.xor(atob(localStorage.getItem("save") ?? ""), "yoshiisangry").split("|").join("<br>")}"`)
                         else
-                        log(`Save: "${SaveSystem.xor(atob(localStorage.getItem("save") ?? ""), "yoshiisangry")}"`)
+                        log(`Save: "${SaveSystem.xor(atob(SaveSystem.getLatestSave() ?? ""), "yoshiisangry")}"`)
                     }
                 } else if (["/clear", "/cls", "/c"].includes(args[0])) {
                     data = ""

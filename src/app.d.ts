@@ -8,6 +8,7 @@ declare namespace App {
 			name: string,
 			role: string,
 			save: string,
+			token: string
 		}
 	}
 	interface PageData {}

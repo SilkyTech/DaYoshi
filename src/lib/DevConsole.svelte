@@ -1,6 +1,6 @@
 <script lang="ts">
     import { game, Inventory, itemIds } from './stores'
-    import * as SaveSystem from './SaveSystem.svelte'
+    import * as SaveSystem from '$lib/SaveSystem.svelte'
     import { boxChances, levelUps, pets } from './constants';
     import { getLevelsNoLocal, median } from './utils';
 	import { onMount } from 'svelte';
@@ -193,13 +193,15 @@
                             log(`#${i+1} | ${out.name} - ${out.mean} Damage (Average)`)
                         })
                     }
-                } else if (["/save"].includes(args[0])) {
-                    SaveSystem.saveSave()
-                    log(`Saved save`)
-                } else if (["/load"].includes(args[0])) {
-                    SaveSystem.loadSave()
-                    log(`Loaded save`)
-                } else if (["/toggle", "/t"].includes(args[0])) {
+                } 
+                // else if (["/save"].includes(args[0])) {
+
+                //     log(`Saved save`)
+                // } else if (["/load"].includes(args[0])) {
+                //     SaveSystem.loadSave()
+                //     log(`Loaded save`)
+                // } 
+                else if (["/toggle", "/t"].includes(args[0])) {
                     showToggle = !showToggle
                 } else if (["/boxchances", "/bc"].includes(args[0])) {
                     for (let id in boxChances) {
@@ -241,7 +243,6 @@
                 prevCmds.push(input)
                 input = ""
                 $usedDev = true
-                SaveSystem.saveSave()
             } else {
                 ind = 0;
             }

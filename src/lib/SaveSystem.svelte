@@ -91,7 +91,7 @@
         return false;
     }
 
-    export function saveSave() {
+    export function saveSave(token: string) {
         let r1 = Math.floor(Math.random()*9999)
         let r2 = Math.floor(Math.random()*9999)
         let save = [
@@ -106,6 +106,8 @@
             Inventory.from(get(inventory)).getItems().map(a => `${Object.keys(itemIds).indexOf(a.id)}!${a.amount}`),
             `${Object.keys(itemIds).indexOf(get(equipment)?.sword ?? "")}!${Object.keys(itemIds).indexOf(get(equipment)?.cloak ?? "")}!${Object.keys(itemIds).indexOf(get(equipment)?.necklace ?? "")}`
         ]
-        localStorage.setItem("save", btoa(xor(save.join("|"), "yoshiisangry")))
+        fetch(`/api/v1/changesave?token=${token}&value=${btoa(xor(save.join("|"), "yoshiisangry")).replace("+", "-").replace("/", "_")}`, {
+            method: "POST"
+        })
     }
 </script>

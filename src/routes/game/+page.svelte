@@ -61,8 +61,10 @@
     let curYoshi: number = 0;
     
     $usedDev = false;
-    
-    int.save.loadSave()
+
+    onMount(() => {
+      int.save.loadSave(data.user.save)
+    })
     //console.log(ownedPets)
     
     //console.log(ownedPets)
@@ -179,7 +181,6 @@
       setTimeout(() => {
         yoshiimg = getSkin().normal[1]
       }, 300)
-      int.save.saveSave()
     }
     
     function mousemove(e: MouseEvent) {
@@ -253,7 +254,6 @@
         setTimeout(function() {
           if (count > 25) {
             $usedAutoclicker = true;
-            int.save.saveSave()
           }
           cps = count;
           count = 0;
@@ -302,6 +302,13 @@
           }
           
         }, 1000)
+      })
+
+      onMount(() => {
+        setInterval(() => {
+          int.save.saveSave(data.user.token)
+          createLog(`Auto Saved!`)
+        }, 1000*60*5)
       })
       
       

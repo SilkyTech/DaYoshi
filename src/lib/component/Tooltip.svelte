@@ -8,6 +8,7 @@
 	
 	/* Tooltip text */
 	.tooltip .tooltiptext {
+	
 	  visibility: hidden;
 	  width: 120px;
 	  background-color: black;
@@ -19,6 +20,7 @@
 	  /* Position the tooltip text - see examples below! */
 	  position: absolute;
 	  z-index: 1;
+	  top: -100%;
 	}
 	
 	/* Show the tooltip text when you mouse over the tooltip container */

@@ -1,1 +1,6 @@
 POST http://localhost:5173/api/v1/changesave?token=830ce5e7-fcad-409f-b032-088cbbad2122&value=fadsfwef9afwawf
+
+
+###
+
+POST http://localhost:5173/api/v1/createPost?token=8b152f6e-9cf0-4067-b47a-2935fae81b4c&title=fasfasfd&content=sdfasdfadsf&thread=general

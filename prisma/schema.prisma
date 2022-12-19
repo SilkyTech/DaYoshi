@@ -20,10 +20,27 @@ model User {
   roleId Int
 
   save   String @default("")
+  posts Post[]
 }
 
 model Roles {
   id   Int    @id @default(autoincrement())
   name String @unique
   User User[]
+}
+
+model Post {
+  id        Int     @id @default(autoincrement())
+  title     String
+  content   String?
+  author    User    @relation(fields: [authorId], references: [id])
+  authorId  String
+  thread    Thread  @relation(fields: [threadId], references: [id])
+  threadId  String
+}
+
+model Thread {
+  id        String  @id @default("")
+  name      String  @default("Thread Name")
+  posts     Post[]  
 }

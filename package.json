@@ -31,7 +31,9 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@bytemd/plugin-gfm": "^1.17.4",
 		"@prisma/client": "^4.7.1",
-		"bcrypt": "^5.1.0"
+		"bcrypt": "^5.1.0",
+		"bytemd": "^1.17.4"
 	}
 }

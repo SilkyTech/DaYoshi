@@ -3,7 +3,7 @@
 </script>
 
 <div class="navbar">
-    <a class="main-title" href="/"><img src="logo.png" alt="Da Yoshi"></a>
+    <a class="main-title" href="/"><img src="/logo.png" alt="Da Yoshi"></a>
     <div class="navs">
         
         <a href="/forums">Forums</a>

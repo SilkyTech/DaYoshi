@@ -58,7 +58,7 @@
         if (uncollapsed[chosen] !== 5)
           $ownedPets.push([uncollapsed[chosen], 0]);
       
-        int.save.saveSave();
+        
         $ownedPets = $ownedPets;
         modal.openModal();
       }, 3000);
@@ -85,7 +85,7 @@
           return false;
         }
       });
-      int.save.saveSave();
+      
     }
   }
 
@@ -107,7 +107,6 @@
         }
         $ownedPets.push(savePet);
         $ownedPets = $ownedPets;
-        int.save.saveSave()
     }
   }
 

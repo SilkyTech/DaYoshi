@@ -5,6 +5,9 @@
     import Toggle from '../component/Toggle.svelte'
     import { settings as _settings } from '../stores'
 	import { onMount } from "svelte";
+
+    export let token: string;
+
     let modal: Modal;
 
     let {
@@ -44,15 +47,7 @@
     <h1>Settings Menu</h1>
     <hr>
     <h3>Save Options:</h3>
-    <CurvedButton onclick={() => setTimeout(() => {
-        if (confirm("Are you sure you want to reset?")) {localStorage.removeItem("save"); location.reload()}
-    }, 0)}>Reset Save</CurvedButton><br>
-    <CurvedButton onclick={() => setTimeout(() => {
-        int.save.loadSave(prompt("Save String: ") ?? "")
-        
-    }, 0)
-        }>Import Save</CurvedButton><br>
-    <CurvedButton onclick={() => prompt(`Copy this:`, localStorage.getItem("save") ?? "")}>Export Save</CurvedButton><br>
+    <CurvedButton onclick={() => int.save.saveSave(token)}>Save save</CurvedButton>
     <h3>Potato PC options:</h3>
     <span class="option-label">Notifications at cursor: </span><Toggle bind:on={$potato.notifs}></Toggle><br>
     <span class="option-label">Pet animation: </span><Toggle bind:on={$potato.petAnim}></Toggle><br>

@@ -26,10 +26,6 @@
     }
 
     export function loadSave(save: string = ""): boolean {
-        
-        if (save === "" && typeof(localStorage) !== "undefined") {
-            save = localStorage.getItem("save") ?? ""
-        }
         if (save !== null) {
             try {
                 let saveParsed = atob(save)
@@ -79,12 +75,9 @@
 
                 return true;
             } catch (e) {
-                if (e instanceof DOMException) {
-                    localStorage.removeItem("save")
-                    alert("Your save is invalid! Resetting your save for you.")
-                    location.reload()
-                    return false;
-                }
+                alert("save is invalid");
+                loadSave("")
+                location.reload()
             }
         
         }

@@ -365,7 +365,7 @@
       <!-- ^ Settings -->
     </div>
   
-    <Settings bind:this={settingsMenu}></Settings>
+    <Settings bind:this={settingsMenu} token={data.user.token}></Settings>
   
     <div class="yoshi" bind:this={yoshi} unselectable>
       <img src={yoshiimg} alt="Yoshi" />

@@ -205,9 +205,9 @@ export const recipes: [[keyof typeof itemIds, number][], [keyof typeof itemIds, 
     [[["Steel Longsword", 1], ["Cube of Pure Steel", 30], ["Dumbbell", 100], ["Yoshi Ball", 20], ["Buff Yoshi Ball", 10]], ["Sturdy Steel Longsword", 1]],
     [[["Ripped Plane Wing", 5], ["Cube of Pure Steel", 5], ["Yoshi Ball", 10], ["Glass", 30]], ["Repaired Plane Wing", 1]],
     [[["Ripped Plane Seat", 5], ["Yoshi Thread", 100], ["Yoshi Ball", 11], ["Glass", 50], ["Red Dye", 7]], ["Repaired Plane Seat", 1]],
-    [[["Yoshi Thread", 100], ["Glass", 100], ["Cube of Pure Steel", 7]], ["Plane Window", 1]],
+    [[["Red Dye", 10], ["Yoshi Thread", 100], ["Glass", 100], ["Cube of Pure Steel", 7]], ["Plane Window", 1]],
     [[["Yoshi Steel", 50], ["Buff Yoshi Ball", 5], ["Glass", 20]], ["Red Dye", 1]],
-    [[["Red Dye", 10], ["Glass", 100], ["Yoshi Steel", 70]], ["Plane Window", 1]],
+    // [[["Glass", 100], ["Yoshi Steel", 70]], ["Plane Window", 1]],
     [[["Repaired Plane Seat", 30], ["Repaired Plane Wing", 10], ["Plane Engine", 4], ["Plane Window", 30], ["Cube of Pure Steel", 20]], ["Airplane", 1]],
     [[["Airplane", 1], ["Yoshi Thread", 200], ["Firefox", 100]], ["Airplane Necklace", 1]]
 ]

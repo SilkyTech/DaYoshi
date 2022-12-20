@@ -96,7 +96,7 @@
     {#if curThread.posts.length === 0}
         Either this thread doesn't exist or there are no posts
     {/if}
-    {#each curThread.posts.reverse() as post}
+    {#each curThread.posts as post}
         <div class="post">
             <a href={`${_location}/${post.id}`}>
                 <span class="post-title">{post.title}</span>

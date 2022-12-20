@@ -171,7 +171,13 @@ export const itemIds = {
     "Repaired Plane Seat": { type: "item", desc: "Repaired masterfully by a player, this seat is now fully refurbished.", img: "items/export/plane/Repaired Plane Seat.png" },
     "Glass": { type: "item", desc: "A pane of glass. Can mabye be smelted.", img: "items/export/Glass.png" },
     "Plane Window": { type: "item", desc: "A plane window, mabye you could use it to make a plane?", img: "items/export/Plane Window.png" },
-    "Red Dye": { type: "item", desc: "Some red dye concocted from Buff Yoshi Sludge, bottled into a jar.", img: "items/export/dye/Red Dye.png" }
+    "Red Dye": { type: "item", desc: "Some red dye concocted from Buff Yoshi Sludge, bottled into a jar.", img: "items/export/dye/Red Dye.png" },
+    "Airplane Necklace": {
+        type: "necklace",
+        desc: "A necklace hanging an airplane.",
+        img: "items/export/necklace/Airplane Necklace.png",
+        damage: 3
+    }
 } as const;
 
 export const recipes: [[keyof typeof itemIds, number][], [keyof typeof itemIds, number]][] = [

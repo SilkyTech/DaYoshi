@@ -44,6 +44,7 @@
 
 
 <div class="main-container">
+    <a href={$page.url.pathname.substring(0, $page.url.pathname.lastIndexOf('/'))}>Back</a>
     <p>By {author}</p>
     <h1>{post.title}</h1>
     <Viewer plugins={[gfm()]} value={post?.content ?? ""}></Viewer>

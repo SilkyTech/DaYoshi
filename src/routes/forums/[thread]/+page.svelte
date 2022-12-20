@@ -82,6 +82,7 @@
 
 
 <div class="main-container">
+    <a href={$page.url.pathname.substring(0, $page.url.pathname.lastIndexOf('/'))}>Back</a>
     <div class="action-bar">
         <h1>Posts:</h1>
         <button on:click={createPost}>Create Post</button>

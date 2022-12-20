@@ -328,6 +328,11 @@
 	
 </script>
 
+<DevConsole isAdmin={data.user?.role === 'ADMIN'} />
+<Settings bind:this={settingsMenu} token={data.user?.token} />
+<Shop bind:this={shopComponent} />
+<PetShop bind:this={petmenuComponent} />
+<InventoryMenu bind:this={inventoryComponent} />
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <main
 	on:click={(e) => {
@@ -338,7 +343,6 @@
 	on:keypress={handleKeypress}
 >
 	<!-- <Intro></Intro> -->
-	<DevConsole isAdmin={data.user.role === 'ADMIN'} />
 	<div class="main-info">
 		<img src="logo.png" alt="Da Yoshi" class="logo" /><br />
 		<span class="info-label"
@@ -438,7 +442,7 @@
 		<!-- ^ Settings -->
 	</div>
 
-	<Settings bind:this={settingsMenu} token={data.user.token} />
+	
 
 	<div class="yoshi" bind:this={yoshi} unselectable>
 		<img src={yoshiimg} alt="Yoshi" />
@@ -500,9 +504,7 @@
 	{#each notifs as notif}
 		<Notif label={notif.label} style={notif.style} pos={notifPos[notif.time]} />
 	{/each}
-	<Shop bind:this={shopComponent} />
-	<PetShop bind:this={petmenuComponent} />
-	<InventoryMenu bind:this={inventoryComponent} />
+	
 
 	<div class="info">
 		{#each logs as log}

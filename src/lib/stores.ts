@@ -169,7 +169,9 @@ export const itemIds = {
     "Repaired Plane Wing": { type: "item", desc: "A repaired wing, repaired with steel.", img: "items/export/plane/Repaired Plane Wing.png" },
     "Ripped Plane Seat": { type: "item", desc: "A torn seat from a broken plane. ", img: "items/export/plane/Ripped Plane Seat.png" },
     "Repaired Plane Seat": { type: "item", desc: "Repaired masterfully by a player, this seat is now fully refurbished.", img: "items/export/plane/Repaired Plane Seat.png" },
-    "Glass": { type: "item", desc: "A pane of glass. Can mabye be smelted.", img: "items/export/Glass.png" }
+    "Glass": { type: "item", desc: "A pane of glass. Can mabye be smelted.", img: "items/export/Glass.png" },
+    "Plane Window": { type: "item", desc: "A plane window, mabye you could use it to make a plane?", img: "items/export/Plane Window.png" },
+    "Red Dye": { type: "item", desc: "Some red dye concocted from Buff Yoshi Sludge, bottled into a jar.", img: "items/export/dye/Red Dye.png" }
 } as const;
 
 export const recipes: [[keyof typeof itemIds, number][], [keyof typeof itemIds, number]][] = [
@@ -190,7 +192,11 @@ export const recipes: [[keyof typeof itemIds, number][], [keyof typeof itemIds, 
     [[["Cube of Pure Steel", 7], ["Dumbbell", 15], ["Yoshi Ball", 6], ["Buff Yoshi Ball", 3]], ["Flimsy Steel Longsword", 1]],
     [[["Flimsy Steel Longsword", 1], ["Cube of Pure Steel", 30], ["Dumbbell", 28], ["Yoshi Ball", 12], ["Buff Yoshi Ball", 7]], ["Steel Longsword", 1]],
     [[["Steel Longsword", 1], ["Cube of Pure Steel", 30], ["Dumbbell", 100], ["Yoshi Ball", 20], ["Buff Yoshi Ball", 10]], ["Sturdy Steel Longsword", 1]],
-
+    [[["Ripped Plane Wing", 5], ["Cube of Pure Steel", 5], ["Yoshi Ball", 10], ["Glass", 30]], ["Repaired Plane Wing", 1]],
+    [[["Ripped Plane Seat", 5], ["Yoshi Thread", 100], ["Yoshi Ball", 11], ["Glass", 50], ["Red Dye", 7]], ["Repaired Plane Seat", 1]],
+    [[["Yoshi Thread", 100], ["Glass", 100], ["Cube of Pure Steel", 7]], ["Plane Window", 1]],
+    [[["Yoshi Steel", 50], ["Buff Yoshi Ball", 5], ["Glass", 20]], ["Red Dye", 1]],
+    [[["Red Dye", 10], ["Glass", 100], ["Yoshi Steel", 70]], ["Plane Window", 1]]
 ]
 
 class Game {

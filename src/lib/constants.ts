@@ -254,14 +254,14 @@ export const boxChances: {[id: number]: [number, number][]} = {
     7: [[5, 50], [22, 22], [26, 15], [27, 6], [28, 1]]
 }
 
-export const boxes: {[id: number]: [string, string, number]} = {
-    1: ["Common Box", "box/commonbox.png", 50],
-    2: ["Rare Box", "box/rarebox.png", 300],
-    3: ["Lava Box", "box/lavabox.png", 500],
-    4: ["Mario Box","box/mariobox.png", 700], 
-    5: ["Nature Box", "box/naturebox.png", 1200],
-    6: ["Mineral Box", "box/commonbox.png", 2000],
-    7: ["Epic Box", "box/commonbox.png", 3000]
+export const boxes: {[id: number]: [string, string, number, number]} = {
+    1: ["Common Box", "box/commonbox.png", 50, 0],
+    2: ["Rare Box", "box/rarebox.png", 300, 100000],
+    3: ["Lava Box", "box/lavabox.png", 500, 300000],
+    4: ["Mario Box","box/mariobox.png", 700, 1000000], 
+    5: ["Nature Box", "box/naturebox.png", 1200, 1500000],
+    6: ["Mineral Box", "box/commonbox.png", 2000, 2300000],
+    7: ["Epic Box", "box/commonbox.png", 3000, 3000000]
 }
 
 export const skins: ["normal" | "hit" | "block", string, string, number][] = [

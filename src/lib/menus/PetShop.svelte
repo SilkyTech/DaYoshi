@@ -157,10 +157,14 @@
   <hr />
   <span class="info-label">Buy Menu:</span><br />
   {#each Object.keys(boxes) as i}
-    <button class="boxbuy" on:click={() => buyBox(+i)}>
+    <button class="boxbuy" on:click={() => buyBox(+i)} disabled={!($hits >= boxes[+i][3])}>
       <img src={boxes[+i][1]} alt="" /><br />
 
-      Buy {boxes[+i][0]} for {boxes[+i][2]} Deaths
+      Buy {boxes[+i][0]} for {boxes[+i][2]} Deaths<br>
+      <br>
+      {#if !($hits >= boxes[+i][3])}
+        Unlocked at {boxes[+i][3]} hits
+      {/if}
     </button>
   {/each}
 

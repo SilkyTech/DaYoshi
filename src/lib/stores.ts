@@ -170,13 +170,18 @@ export const itemIds = {
     "Ripped Plane Seat": { type: "item", desc: "A torn seat from a broken plane. ", img: "items/export/plane/Ripped Plane Seat.png" },
     "Repaired Plane Seat": { type: "item", desc: "Repaired masterfully by a player, this seat is now fully refurbished.", img: "items/export/plane/Repaired Plane Seat.png" },
     "Glass": { type: "item", desc: "A pane of glass. Can mabye be smelted.", img: "items/export/Glass.png" },
-    "Plane Window": { type: "item", desc: "A plane window, mabye you could use it to make a plane?", img: "items/export/Plane Window.png" },
+    "Plane Window": { type: "item", desc: "A plane window, mabye you could use it to make a plane?", img: "items/export/plane/Plane Window.png" },
     "Red Dye": { type: "item", desc: "Some red dye concocted from Buff Yoshi Sludge, bottled into a jar.", img: "items/export/dye/Red Dye.png" },
     "Airplane Necklace": {
         type: "necklace",
         desc: "A necklace hanging an airplane.",
         img: "items/export/necklace/Airplane Necklace.png",
         damage: 3
+    },
+    "Airplane": {
+        type: "item",
+        desc: "An airplane. Simple and effective.",
+        img: "items/export/plane/Airplane.png"
     }
 } as const;
 
@@ -202,7 +207,9 @@ export const recipes: [[keyof typeof itemIds, number][], [keyof typeof itemIds, 
     [[["Ripped Plane Seat", 5], ["Yoshi Thread", 100], ["Yoshi Ball", 11], ["Glass", 50], ["Red Dye", 7]], ["Repaired Plane Seat", 1]],
     [[["Yoshi Thread", 100], ["Glass", 100], ["Cube of Pure Steel", 7]], ["Plane Window", 1]],
     [[["Yoshi Steel", 50], ["Buff Yoshi Ball", 5], ["Glass", 20]], ["Red Dye", 1]],
-    [[["Red Dye", 10], ["Glass", 100], ["Yoshi Steel", 70]], ["Plane Window", 1]]
+    [[["Red Dye", 10], ["Glass", 100], ["Yoshi Steel", 70]], ["Plane Window", 1]],
+    [[["Repaired Plane Seat", 30], ["Repaired Plane Wing", 10], ["Plane Engine", 4], ["Plane Window", 30], ["Cube of Pure Steel", 20]], ["Airplane", 1]],
+    [[["Airplane", 1], ["Yoshi Thread", 200], ["Firefox", 100]], ["Airplane Necklace", 1]]
 ]
 
 class Game {

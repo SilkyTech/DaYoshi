@@ -259,7 +259,7 @@ export const boxes: {[id: number]: [string, string, number]} = {
     2: ["Rare Box", "box/rarebox.png", 300],
     3: ["Lava Box", "box/lavabox.png", 500],
     4: ["Mario Box","box/mariobox.png", 700], 
-    5: ["Nature Box", "box/commonbox.png", 1200],
+    5: ["Nature Box", "box/naturebox.png", 1200],
     6: ["Mineral Box", "box/commonbox.png", 2000],
     7: ["Epic Box", "box/commonbox.png", 3000]
 }
@@ -438,7 +438,7 @@ export const pets: {
     // Epic Box
     {
         name: "Eian Yoshi",
-        perks: (level) => ({hitAdd: level*0.05, hitMul: 0.05*level}),
+        perks: (level) => ({hitAdd: level*0.05, hitMul: 0.042*level}),
         description: "Pure luck and pure cringe condensed into a yoshi. Eian WHY",
         source: "pet/epicbox/eianbabyyoshi.png",
         salvage: 350,
@@ -491,14 +491,14 @@ export const pets: {
         source: "pet/epicbox/silveryoshi.png",
     }, {
         name: "Gold Yoshi",
-        perks: (level) => ({hitAdd: level*0.045, hitMul: 0.05*level + Math.random()}),
+        perks: (level) => ({hitAdd: level*0.042, hitMul: 0.045*level + Math.random()}),
         description: "A yoshi made of molten gold.",
         rarity: "epic",
         salvage: 500,
         source: "pet/epicbox/goldyoshi.png",
     }, {
         name: "Diamond Yoshi",
-        perks: (level) => ({hitAdd: level*0.05, hitMul: 0.051*level+ Math.random()}),
+        perks: (level) => ({hitAdd: level*0.043, hitMul: 0.051*level+ Math.random()}),
         description: "A diamond-hard yoshi.",
         rarity: "legendary",
         salvage: 1000,
@@ -566,6 +566,14 @@ export const yoshis: {
         kill: 7500,
         drops: [["Dumbbell", 99], ["Iron Yoshi Apple", 1]]
     }, {
+        name: "Plane Yoshi",
+        hp: 1000000,
+        regen: 30,
+        reward: 11000,
+        kill: 20000,
+        drops: [["Plane Engine", 19], ["Ripped Plane Seat", 7], ["Ripped Plane Wing", 12], ["Glass", 99]]
+    },
+    {
         name: "Placeholder Yoshi",
         hp: Infinity,
         regen: Infinity,

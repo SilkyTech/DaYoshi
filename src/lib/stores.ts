@@ -164,6 +164,12 @@ export const itemIds = {
         img: "items/export/sword/steellong/Sturdy Steel Longsword.png",
         damage: 4.2,
     },
+    "Plane Engine": { type: "item", desc: "A plane engine, dropped from the Plane Yoshi.", img: "items/export/plane/Plane Engine.png" },
+    "Ripped Plane Wing": { type: "item", desc: "A wing from a broken plane. ", img: "items/export/plane/Ripped Plane Wing.png" },
+    "Repaired Plane Wing": { type: "item", desc: "A repaired wing, repaired with steel.", img: "items/export/plane/Repaired Plane Wing.png" },
+    "Ripped Plane Seat": { type: "item", desc: "A torn seat from a broken plane. ", img: "items/export/plane/Ripped Plane Seat.png" },
+    "Repaired Plane Seat": { type: "item", desc: "Repaired masterfully by a player, this seat is now fully refurbished.", img: "items/export/plane/Repaired Plane Seat.png" },
+    "Glass": { type: "item", desc: "A pane of glass. Can mabye be smelted.", img: "items/export/Glass.png" }
 } as const;
 
 export const recipes: [[keyof typeof itemIds, number][], [keyof typeof itemIds, number]][] = [

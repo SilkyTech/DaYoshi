@@ -2,8 +2,9 @@
 	import { onMount } from "svelte";
 
     onMount(() => {
-        location.href = "/"
+        setTimeout(() => location.href = "/", 300)
+        
     })
 </script>
 
-Redirecting...
+Logging out...

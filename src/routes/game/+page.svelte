@@ -310,7 +310,7 @@
 		setInterval(() => {
 			int.save.saveSave(data.user.token);
 			createLog(`Auto Saved!`);
-		}, 1000 * 45);
+		}, 1000 * 30);
 
     window.onbeforeunload = function (e) {
       e = e || window.event;

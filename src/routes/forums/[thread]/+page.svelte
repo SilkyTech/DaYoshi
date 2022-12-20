@@ -19,7 +19,7 @@
     let _title_data: string = "";
     let _content_data: string = ""
 
-    $: curThread = data.threads?.[data.threads.map(a => a.id).indexOf($page.params.thread)] ?? []
+    $: curThread = (data.threads?.[data.threads.map(a => a.id).indexOf($page.params.thread)] ?? [])
     function getPostData(): Promise<{
         title: string,
         content: string,
@@ -75,7 +75,9 @@
             names[a.id] = data;
         })
     })
-</script>
+
+    $: posts = curThread.posts.reverse();
+    </script>
 <Navbar data={data.locals}></Navbar>
 
 
@@ -93,10 +95,10 @@
         <button on:click={submit}>Create</button> <button on:click={cancel}>Cancel</button>
     </div>
     {/if}
-    {#if curThread.posts.length === 0}
+    {#if posts.length === 0}
         Either this thread doesn't exist or there are no posts
     {/if}
-    {#each curThread.posts as post}
+    {#each posts as post}
         <div class="post">
             <a href={`${_location}/${post.id}`}>
                 <span class="post-title">{post.title}</span>

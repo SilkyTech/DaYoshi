@@ -470,14 +470,14 @@ export const pets: {
         source: "pet/goombastackpromaxultra.png"
     }, {
         name: "Aged Goombascraper",
-        perks: (level) => ({hitAdd: 0.0075*level, hitMul: 0.0075*level + Math.random()}),
+        perks: (level) => ({hitAdd: 0.01*level, hitMul: 0.01*level + Math.random()}),
         description: "Goomba Stack Pro Max goes too far its a skyscraper, but the Goombas are old",
         salvage: 1200,
         rarity: "mythical",
         source: "pet/Goombascraper.png"
     }, {
         name: "Aged Goombascraper Ultra",
-        perks: (level) => ({hitAdd: 0.01*level, hitMul: 0.01*level + Math.random()}),
+        perks: (level) => ({hitAdd: 0.015*level, hitMul: 0.015*level + Math.random()}),
         description: "Goombascraper, but more big, and older",
         salvage: 2400,
         rarity: "transcendental",

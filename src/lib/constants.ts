@@ -251,7 +251,8 @@ export const boxChances: {[id: number]: [number, number][]} = {
     4: [[0, 16], [8, 30], [9, 2], [1, 16], [10, 7], [12, 6], [13, 1]],
     5: [[1, 35], [2, 16], [17, 30], [16, 8], [6, 30], [4, 12], [18, 1], [5, 30]],
     6: [[20, 1], [5, 30], [22, 27], [21, 4], [6, 15], [4, 7]],
-    7: [[5, 50], [22, 22], [26, 15], [27, 6], [28, 1]]
+    7: [[5, 50], [22, 22], [26, 15], [27, 6], [28, 1]],
+    8: [[21, 20], [26, 13], [28, 10], [32, 17], [31, 5], [32, 2], [34, 1]]
 }
 
 export const boxes: {[id: number]: [string, string, number, number]} = {
@@ -261,7 +262,8 @@ export const boxes: {[id: number]: [string, string, number, number]} = {
     4: ["Mario Box","box/mariobox.png", 700, 500000], 
     5: ["Nature Box", "box/naturebox.png", 1200, 800000],
     6: ["Mineral Box", "box/commonbox.png", 2000, 1000000],
-    7: ["Epic Box", "box/commonbox.png", 3000, 1300000]
+    7: ["Epic Box", "box/commonbox.png", 3000, 1300000],
+    8: ["Space Box", "box/commonbox.png", 5000, 2000000]
 }
 
 export const skins: ["normal" | "hit" | "block", string, string, number][] = [
@@ -517,7 +519,37 @@ export const pets: {
         salvage: 2400,
         rarity: "transcendental",
         source: "pet/Goombascraperultra.png"
-    },
+    }, 
+    // Space Box
+    {
+        name: "Netherite Yoshi",
+        perks: (level) => ({hitAdd: level*0.05, hitMul: level*0.049 + Math.random()}),
+        description: "Netherite Yoshi transported from the nether, still amazed at the existence of water.",
+        rarity: "epic",
+        salvage: 300,
+        source: "pet/spacebox/netheriteyoshi.png"
+    }, {
+        name: "Iron Yoshi",
+        perks: (level) => ({hitAdd: level*0.035, hitMul: level*0.039 + Math.random()}),
+        description: "A yoshi formed from the isotope of element 26 AKA iron.",
+        rarity: "uncommon",
+        salvage: 200,
+        source: "pet/spacebox/iron.png"
+    }, {
+        name: "Xenon Yoshi",
+        perks: (level) => ({hitAdd: level*0.049, hitMul: level*0.052 + Math.random()}),
+        description: "A yoshi formed from xenon, it's a gas.",
+        rarity: "legendary",
+        salvage: 500,
+        source: "pet/spacebox/xenonyoshi.png"
+    }, {
+        name: "Transparent Yoshi",
+        perks: (level) => ({hitAdd: level*0.051, hitMul: level*0.052 + Math.random()}),
+        description: "Transparent yoshi, probably got exposed to too much Ron juice.",
+        rarity: "legendary",
+        salvage: 1000,
+        source: "pet/spacebox/transparentyoshi.png"
+    }
 ]
 
 export const yoshis: {

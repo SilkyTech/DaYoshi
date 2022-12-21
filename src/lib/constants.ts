@@ -534,7 +534,7 @@ export const pets: {
         description: "A yoshi formed from the isotope of element 26 AKA iron.",
         rarity: "uncommon",
         salvage: 200,
-        source: "pet/spacebox/iron.png"
+        source: "pet/spacebox/ironyoshi.png"
     }, {
         name: "Xenon Yoshi",
         perks: (level) => ({hitAdd: level*0.049, hitMul: level*0.052 + Math.random()}),

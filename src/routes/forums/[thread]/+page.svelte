@@ -54,6 +54,7 @@
                     })
                 })
                 console.log(res, await res.text(), res.url)
+                location.reload()
             }
         } else {
             alert(`You aren't logged in! Please make an account to post.`)
@@ -76,7 +77,7 @@
         })
     })
 
-    $: posts = curThread.posts.reverse();
+    $: posts = curThread.posts.sort((a, b) => b.id - a.id);
     </script>
 <Navbar data={data.locals}></Navbar>
 
